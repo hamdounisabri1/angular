@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ApartmentServiceService } from 'src/app/apartment.service.service';
 import { Apartment } from 'src/core/models/apartment.model';
 import { Residence } from 'src/core/models/residence.model';
 
@@ -12,7 +13,7 @@ export class AddApartmentComponent {
   apartForm: FormGroup;
 
 
-  constructor( ) {
+  constructor( private service : ApartmentServiceService) {
     this.apartForm = new FormGroup({
       appNumber: new FormControl('', [Validators.required]),
       floorNumber: new FormControl('', [Validators.required]),
@@ -38,8 +39,8 @@ export class AddApartmentComponent {
       category: formValues.Category,
       ResidenceId: Number(formValues.Residence)
     };
-
-    console.log(newApartment); 
+     
+    this.service.addApartment(newApartment);
   }
   }
 

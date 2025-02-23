@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'residenceAdd', component: AddResidenceComponent},
   { path: 'residenceUpdate', component: UpdateResidenceComponent},
   { path: 'apartments', component: ApartmentsComponent},
-  { path: 'apartmentsByresidence', component: ApartmentsByResidenceComponent},
+  { path: 'apartmentsByresidence/:id', component: ApartmentsByResidenceComponent},
   { path: 'addApartment', component: AddApartmentComponent},
 
   { path: '', redirectTo: '/home', pathMatch: 'full' } ,
