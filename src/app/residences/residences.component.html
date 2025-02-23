@@ -1,0 +1,38 @@
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px;">
+  <button type="button" class="btn btn-primary btn-lg" [routerLink]="['/residenceAdd']">Add residence</button>
+</div>
+  
+  <input style="padding: 500;" class="form-control" type="search" placeholder="Search by address" aria-label="Search" [(ngModel)]="searchAddress"> 
+<br><br>
+
+
+
+<br><br>
+
+
+<div class="container">
+
+
+    <div class="content" *ngFor="let residence of listResidences | filter: searchAddress" >
+        
+        <img [src]="residence.image" alt="tets">
+
+        <p style="text-align: center;">{{ residence.name }}</p>
+        <button (click)="showLocation(residence)">Show Location</button>
+
+        <p *ngIf="residence.status === 'Disponible'"  class="text-success">Disponible</p>
+
+        <p *ngIf="residence.status === 'En Construction'" class="text-secondary">En Construction</p>
+
+        <p *ngIf="residence.status === 'Vendu'" class="text-danger">Vendu</p>
+
+        <button type="button" class="btn btn-outline-secondary" [routerLink]="['/residence-details',residence.id ]">Details</button>
+      
+         <button type="button" class="btn btn-outline-danger" style="margin: 20;" (click)="likeResidence(residence)">Like</button> 
+        
+
+
+      </div>
+  </div>
+

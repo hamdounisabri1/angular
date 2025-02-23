@@ -1,0 +1,113 @@
+<form [formGroup]="apartForm" class="container">
+    <!-- Appartement Number -->
+    <div class="row mb-2 align-items-center">
+      <div class="col-4 text-start">
+        <label for="appNumber">Appartement Number:</label>
+      </div>
+      <div class="col-8">
+        <input type="number" id="appNumber" formControlName="appNumber" class="form-control w-100">
+        <!-- Error Message -->
+        <div *ngIf="apartForm.get('appNumber')?.invalid && apartForm.get('appNumber')?.touched" class="text-danger">
+          <small>Appartement Number is required and must be a number.</small>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Floor Number -->
+    <div class="row mb-2 align-items-center">
+      <div class="col-4 text-start">
+        <label for="floorNumber">Floor Number:</label>
+      </div>
+      <div class="col-8">
+        <input type="number" id="floorNumber" formControlName="floorNumber" class="form-control w-100">
+        <!-- Error Message -->
+        <div *ngIf="apartForm.get('floorNumber')?.invalid && apartForm.get('floorNumber')?.touched" class="text-danger">
+          <small>Floor Number is required and must be a number.</small>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Surface -->
+    <div class="row mb-2 align-items-center">
+      <div class="col-4 text-start">
+        <label for="surface">Surface:</label>
+      </div>
+      <div class="col-8">
+        <input type="text" id="surface" formControlName="surface" class="form-control w-100">
+        <!-- Error Message -->
+        <div *ngIf="apartForm.get('surface')?.invalid && apartForm.get('surface')?.touched" class="text-danger">
+          <small>Surface is required.</small>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Terrace -->
+    <div class="row mb-2 align-items-center">
+      <div class="col-4 text-start">
+        <label>Terrace:</label>
+      </div>
+      <div class="col-8 d-flex gap-3">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" formControlName="TerraceCheck" value="yes">
+          <label class="form-check-label" for="available">yes</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" formControlName="TerraceCheck" value="no">
+          <label class="form-check-label" for="notAvailable">no</label>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Surface Terrace (Conditional) -->
+    <div *ngIf="apartForm.get('TerraceCheck')?.value === 'yes'" class="row mb-2 align-items-center">
+      <div class="col-4 text-start">
+        <label for="TerraceSurface">Surface Terrace:</label>
+      </div>
+      <div class="col-8">
+        <input type="text" id="TerraceSurface" formControlName="TerraceSurface" class="form-control w-100">
+        <!-- Error Message -->
+        <div *ngIf="apartForm.get('TerraceSurface')?.invalid && apartForm.get('TerraceSurface')?.touched" class="text-danger">
+          <small>Surface Terrace is required if Terrace is 'yes'.</small>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Category -->
+    <div class="row mb-2 align-items-center">
+      <div class="col-4 text-start">
+        <label>Category:</label>
+      </div>
+      <div class="col-8 d-flex gap-3">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" formControlName="Category" value="S+1">
+          <label class="form-check-label" for="available">S+1</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" formControlName="Category" value="S+2">
+          <label class="form-check-label" for="notAvailable">S+2</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" formControlName="Category" value="S+3">
+          <label class="form-check-label" for="available">S+3</label>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Residence -->
+    <div class="row mb-2 align-items-center">
+      <div class="col-4 text-start">
+        <label for="Residence">Residence:</label>
+      </div>
+      <div class="col-8">
+        <input type="text" id="Residence" formControlName="Residence" class="form-control w-100">
+        <!-- Error Message -->
+        <div *ngIf="apartForm.get('Residence')?.invalid && apartForm.get('Residence')?.touched" class="text-danger">
+          <small>Residence is required.</small>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Submit Button (Disabled if form is invalid) -->
+    <button type="button" (click)="onsubmuti()" [disabled]="apartForm.invalid" class="btn btn-primary">Add</button>
+  </form>
+  
