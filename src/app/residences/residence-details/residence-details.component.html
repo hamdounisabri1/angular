@@ -11,7 +11,7 @@
     <div class="card-body text-center">
       <p class="card-text">{{ residenceSelected.name }}</p>
       <p class="card-text">{{ residenceSelected.status }}</p>
-      <button type="button" class="btn btn-outline-primary" data-mdb-ripple-init data-mdb-ripple-color="dark" routerLink="/apartmentsByresidence" >appartements list</button>
+      <button type="button" class="btn btn-outline-primary" data-mdb-ripple-init data-mdb-ripple-color="dark"   [routerLink]="['/apartmentsByresidence',residenceSelected.id ]">appartements list</button>
       <a (click)="nextRes()" class="btn btn-primary">Next</a>
     </div>
   </div>

@@ -1,1 +1,30 @@
-<p>apartments-by-residence works!</p>
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let apart of listAppByRes">
+        <!-- Card Start -->
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-center text-primary">Apartment {{ apart.apartNum }}</h5>
+  
+            <p class="card-text"><strong>Residence:</strong> {{ apart.ResidenceId }}</p>
+  
+            <p class="card-text"><strong>Floor Number:</strong> {{ apart.floorNum }}</p>
+            <p class="card-text"><strong>Surface:</strong> {{ apart.surface }} m²</p>
+  
+            <p class="card-text">
+              <strong>Terrace: </strong> 
+              <span *ngIf="apart.terrace === true" class="text-success">With Terrace</span>
+              <span *ngIf="apart.terrace === false" class="text-danger">No Terrace</span>
+            </p>
+  
+            <p class="card-text" *ngIf="apart.terrace === true">
+              <strong>Terrace Surface:</strong> {{ apart.surfaceterrace }} m²
+            </p>
+  
+            <p class="card-text"><strong>Category:</strong> {{ apart.category }}</p>
+          </div>
+        </div>
+        <!-- Card End -->
+      </div>
+    </div>
+  </div>
