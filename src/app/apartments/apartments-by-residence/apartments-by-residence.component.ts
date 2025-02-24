@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ApartmentServiceService } from 'src/app/apartment.service.service';
+import { ApartmentServiceService } from 'src/core/models/Services/apartment.service.service';
 import { Apartment } from 'src/core/models/apartment.model';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ApartmentServiceService } from 'src/app/apartment.service.service';
+import { ApartmentServiceService } from 'src/core/models/Services/apartment.service.service';
 import { Apartment } from 'src/core/models/apartment.model';
 import { Residence } from 'src/core/models/residence.model';
 

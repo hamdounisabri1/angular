@@ -1,0 +1,72 @@
+{
+    "residences": [
+      {
+        "id": 1,
+        "name": "El fel",
+        "address": "Borj Cedria",
+        "image": "assets/elFel.jpg",
+        "status": "Disponible",
+        "apartments": [
+          {
+            "apartNum": 1,
+            "category": "S+1",
+            "floorNum": 1,
+            "surface": 250,
+            "terrace": true,
+            "surfaceterrace": 50
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "El yasmine",
+        "address": "Ezzahra",
+        "image": "assets/elYassmine.jpg",
+        "status": "Disponible",
+        "apartments": [
+          {
+            "apartNum": 2,
+            "category": "S+3",
+            "floorNum": 2,
+            "surface": 100,
+            "terrace": false,
+            "surfaceterrace": 0
+          },
+          {
+            "apartNum": 3,
+            "category": "S+2",
+            "floorNum": 1,
+            "surface": 300,
+            "terrace": true,
+            "surfaceterrace": 20
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "El Arij",
+        "address": "Rades",
+        "image": "assets/elFel.jpg",
+        "status": "Vendu",
+        "apartments": [
+          {
+            "apartNum": 4,
+            "category": "S+2",
+            "floorNum": 2,
+            "surface": 250,
+            "terrace": false,
+            "surfaceterrace": 0
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "El Anber",
+        "address": "inconnu",
+        "image": "assets/elYassmine.jpg",
+        "status": "En Construction",
+        "apartments": []
+      }
+    ]
+  }
+  
